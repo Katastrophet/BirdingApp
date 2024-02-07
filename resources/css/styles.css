@@ -1,0 +1,336 @@
+@font-face {
+    font-family: "Rokkitt";
+    src: url(./fonts/Rokkitt/Rokkitt-Regular.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+html {
+    height: 100%;
+    margin: 0
+}
+
+body {
+    display: flex;
+    min-height: 100%;
+    margin: 0;
+    font-family: "Rokkitt", serif;
+    color: #333;
+    background-color: #1cdf76
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    background: #009143;
+    text-align: center;
+    font-size: 30px;
+    line-height: 50px;
+    color: #FFF
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    padding: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, .4)
+
+}
+
+footer a {
+    color: #333;
+}
+
+.title {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    margin: 0;
+    padding: 0;
+    line-height: 70px;
+    font-size: 1.5em;
+    text-align: left
+}
+
+.menu {
+    display: block;
+    position: absolute;
+    width: 100px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    line-height: 70px
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1cdf76;
+    color: #009143;
+    line-height: 50px;
+    font-size: 25px;
+    text-align: center;
+    background: #FFF
+}
+
+.decal {
+    position: fixed;
+    width: 100%;
+    top: 70px;
+    height: 2px;
+    border-bottom: 1px solid #1cdf76;
+    background: #00c95d
+}
+
+content {
+    min-height: 100%;
+    padding: 25px;
+    margin: 73px 0 0;
+    padding: 17px 0 0 0;
+    background: #1cdf76
+}
+
+.bird-gallery {
+    display: block;
+    float: left;
+    width: 300px;
+    height: 600px;
+    margin: 1em;
+    overflow: hidden
+}
+
+.bird-search {
+    display: block;
+    width: 266px;
+    height: 25px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border-width: 0;
+    font: 20px/25px "Rokkitt", serif
+}
+
+.bird-search:focus {
+    outline-style: none;
+    outline-width: 0
+}
+
+.bird-gallery .bird-list {
+    width: 280px;
+    height: 100%;
+    list-style-type: none;
+    margin: 25px 0;
+    padding: 0;
+    overflow-y: auto
+}
+
+.bird-gallery .bird-list::-webkit-scrollbar {
+    width: 10px;
+    background: #1cdf76
+}
+
+.bird-gallery .bird-list::-webkit-scrollbar-thumb {
+    background: #009143
+}
+
+.bird-gallery .bird-list-entry {
+    position: relative;
+    width: 250px;
+    clear: both;
+    margin: 10px 0
+}
+
+.bird-gallery .bird-image {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    float: left;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFF
+}
+
+.bird-gallery .bird-description {
+    display: block;
+    height: 44px;
+    margin-left: 25px;
+    padding: 5px 0 5px 40px;
+    border-radius: 0 10px 10px 0;
+    background: #FFF
+}
+
+.bird-gallery .bird-name {
+    display: block;
+    font-size: 24px;
+    color: #333
+}
+
+.bird-gallery .bird-latin-name {
+    display: block;
+    font-size: 15px;
+    font-style: italic;
+    color: #777
+}
+
+.bird-gallery .add-bird-button {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.5em;
+    color: #00662f
+}
+
+.bird-gallery .add-bird-button:hover {
+    cursor: pointer
+}
+
+/**********sound button***********/
+.bird-gallery .sound-bird-button {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 6px;
+    font-size: 1.2em;
+    color: #00662f
+}
+
+.bird-gallery .sound-bird-button:hover {
+    cursor: pointer
+}
+
+.playing{
+    color: orangered;
+}
+/**************************************/
+
+.bird-counter {
+    display: block;
+    float: left;
+    width: 800px;
+    height: 600px;
+    margin: 1em
+}
+
+.bird-counter .bird-list {
+    width: 800px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+.bird-counter .bird-list-entry {
+    display: block;
+    position: relative;
+    width: 204px;
+    height: 204px;
+    margin: 1em;
+    float: left;
+    overflow: hidden;
+}
+
+.bird-counter .bird-image {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFF;
+    z-index: 1;
+}
+
+.bird-counter .bird-interface {
+    display: block;
+    position: relative;
+    width: 204px;
+    height: 100px;
+    margin-top: -100px;
+    border-radius: 0 0 204px 204px;
+    z-index: 2;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .6)
+}
+
+.bird-counter .bird-info {
+    text-align: center;
+    height: 100px;
+    padding-top: .5em
+}
+
+.bird-counter .bird-name {
+    display: block;
+    font-size: 1.7em
+}
+
+.bird-counter .bird-latin-name {
+    display: block;
+    font-size: 1.1em;
+    font-style: italic
+}
+
+.bird-counter .bird-counter-info {
+    display: block;
+    position: relative;
+    width: 204px;
+    height: 50px;
+    padding: 0;
+    clear: both;
+    background: #FFF
+}
+
+.bird-counter .bird-current-max {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: -50px auto 0;
+    font-size: 2.2em;
+    font-weight: 700;
+    z-index: 6
+}
+
+.bird-counter .button {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 70px;
+    z-index: 4
+}
+
+.bird-counter .bird-counter-increase {
+    padding-right: 15px
+}
+
+.bird-counter .bird-counter-decrease {
+    padding-left: 15px
+}
+
+.bird-counter .button:hover {
+    cursor: pointer
+}
+
+.bird-counter .bird-counter-increase:hover {
+    padding-right: 15px;
+    background: rgba(20, 255, 120, .3)
+}
+
+.bird-counter .bird-counter-decrease:hover {
+    padding-left: 15px;
+    background: rgba(255, 20, 120, .3)
+}

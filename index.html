@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Birding App</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <ul class="menu">
+            <li><i class="fa fa-binoculars" aria-hidden="true"></i></li>
+        </ul>
+        <h1 class="title">Birding App</h1>
+    </header>
+    <div class="decal"></div>
+    <content>
+        <div class="bird-gallery">
+            <input type="text" class="bird-search" />
+            <ul class="bird-list">
+            </ul>
+        </div>
+        <div class="bird-counter">
+            <ul class="bird-list">
+             
+            </ul>
+        </div>
+    </content>
+
+    <footer>
+        <p>
+        Die verwendeten Bilddateien entstammen den <a href="https://commons.wikimedia.org/wiki/Main_Page" target="_new">Wikimedia Commons</a>. Die Audio-Aufzeichnungen sind dem <a href="http://www.tierstimmenarchiv.de/" target="_new">Tierstimmenarchiv</a> des <a href="http://www.naturkundemuseum.berlin/" target="_new">Naturkundemuseums Berlin</a> entnommen.<p/>
+        <p>Bei der Implementierung der Anwendung wurde <a href="http://underscorejs.org/">underscore.js</a> eingesetzt.</p>
+    </footer>
+
+    <script type="text/template" id="bird-list-entry">
+        <li class="bird-list-entry" bird-id="<%= id %>">
+            <img src="<%= imagePath %>" class="bird-image" />
+            <div class="bird-description">
+                <span class="bird-name"><%= name %></span>
+                <span class="bird-latin-name"><%= latinName %></span>
+            </div>
+            <span class="add-bird-button">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </span>
+            <span class="sound-bird-button">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                </span>
+        </li>
+    </script>
+    <script type="text/template" id="bird-counter-entry">
+        <li class="bird-list-entry" bird-id="<%= id %>">
+            <img src="<%= imagePath %>" class="bird-image" />
+            <div class="bird-interface">
+                <div class="bird-info">
+                    <span class="bird-name"><%= name %></span>
+                    <span class="bird-latin-name"><%= latinName %></span>
+                    <div class="bird-counter-info">
+                        <span class="bird-counter-decrease button"><i class="fa fa-minus button decrease" aria-hidden="true"></i></span>
+                        <span class="bird-counter-increase button"><i class="fa fa-plus button increase" aria-hidden="true"></i></span>
+                        <span class="bird-current-max"><%= count %></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </script>
+    <script type="text/template" id="bird-list">
+        [{ "id":1, "name":"Haussperling", "latinName":"Passer domesticus", "imagePath":"resources/images/haussperling.png", "audioPath":"resources/data/audio/haussperling.ogg" },{ "id":2, "name":"Kohlmeise", "latinName":"Parus major", "imagePath":"resources/images/kohlmeise.png", "audioPath":"resources/data/audio/kohlmeise.ogg" },{ "id":3, "name":"Star", "latinName":"Sturnus vulgaris", "imagePath":"resources/images/star.png", "audioPath":"resources/data/audio/star.ogg" },{ "id":4, "name":"Amsel", "latinName":"Turdus merula", "imagePath":"resources/images/amsel.png", "audioPath":"resources/data/audio/amsel.ogg" },{ "id":5,"name":"Blaumeise", "latinName":"Cyanistes caerruleus", "imagePath":"resources/images/blaumeise.png", "audioPath":"resources/data/audio/blaumeise.ogg" },{ "id":6, "name":"Elster", "latinName":"Pica pica", "imagePath":"resources/images/elster.png", "audioPath":"resources/data/audio/elster.ogg" },{ "id":7, "name":"Grünfink", "latinName":"Chloris chloris", "imagePath":"resources/images/gruenfink.png", "audioPath":"resources/data/audio/gruenfink.ogg" },{ "id":8, "name":"Mehlschwalbe", "latinName":"Delichon urbicum", "imagePath":"resources/images/mehlschwalbe.png", "audioPath":"resources/data/audio/mehlschwalbe.ogg" },{ "id":9, "name":"Mauersegler", "latinName":"Apus apus", "imagePath":"resources/images/mauersegler.png", "audioPath":"resources/data/audio/mauersegler.ogg" },{ "id":10, "name":"Buchfink", "latinName":"Fringilla coelebs", "imagePath":"resources/images/buchfink.png", "audioPath":"resources/data/audio/buchfink.ogg" },{ "id":11, "name":"Ringeltaube", "latinName":"Columba palumbus", "imagePath":"resources/images/ringeltaube.png", "audioPath":"resources/data/audio/ringeltaube.ogg" },{ "id":12, "name":"Feldsperling", "latinName":"Passer montanus", "imagePath":"resources/images/feldsperling.png", "audioPath":"resources/data/audio/feldsperling.ogg" },{ "id":13, "name":"Türkentaube", "latinName":"Streptopelia decaocto", "imagePath":"resources/images/tuerkentaube.png", "audioPath":"resources/data/audio/tuerkentaube.ogg" },{ "id":14, "name":"Rauchschwalbe", "latinName":"Hirundo rustica", "imagePath":"resources/images/rauchschwalbe.png", "audioPath":"resources/data/audio/rauchschwalbe.ogg" },{ "id":15, "name":"Rotkehlchen", "latinName":"Erithacus rubecula", "imagePath":"resources/images/rotkehlchen.png", "audioPath":"resources/data/audio/rotkehlchen.ogg"}]
+    </script>
+    <script src="vendors/underscore/underscore-min.js"></script>
+    <script src="resources/js/BirdingApp.js"></script>
+    <script src="resources/js/BirdingModel.js"></script>
+    <script src="resources/js/BirdingController.js"></script>
+    <script src="resources/js/BirdCounterView.js"></script>
+    <script src="resources/js/BirdListView.js"></script>
+    <script src="resources/js/BirdingSound.js"></script>
+    <script>
+        BirdingApp.init();
+    </script>
+</body>
+
+</html>
